@@ -1,4 +1,4 @@
-/* 🎨 Estilo general */
+/* Estilo general */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,118 +7,138 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #fafafa;
+  line-height: 1.5;
   color: #333;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
+/* Encabezado */
 header {
-  background-color: #407ef1;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 2px solid #f0b24c;
-}
-
-h1 {
-  font-size: 1.8rem;
-}
-
-footer {
-  margin-top: auto;
-  background-color: #ffcc80;
-  text-align: center;
-  padding: 10px;
-  font-size: 0.9rem;
-}
-
-/* 🐾 Catálogo principal */
-.catalogo {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.card {
-  background: white;
-  border-radius: 15px;
-  padding: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform: scale(1.03);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.card h2 {
-  margin-top: 10px;
-  font-size: 1.3rem;
-}
-
-.card p {
-  font-size: 0.95rem;
-  margin: 10px 0;
-}
-
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  background-color: #007bff;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 8px;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-}
-
-/* 🐕 Detalle individual */
-.detalle {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 20px;
+  justify-content: space-between;
+  background-color: #222;
+  color: white;
+  padding: 1em;
+  flex-wrap: wrap;
 }
 
-.perfil {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+header img {
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
 }
 
-.info {
-  margin-top: 15px;
+header select {
+  padding: 0.5em;
+  border-radius: 8px;
+  border: none;
+  font-size: 1em;
+}
+
+/* Secciones */
+section.bloque {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ddd;
+}
+
+.texto {
+  flex: 1 1 300px;
+  padding: 1em;
+}
+
+.media {
+  flex: 1 1 300px;
   text-align: center;
 }
 
-video {
+.media img, .media video {
   width: 100%;
   max-width: 400px;
-  margin-top: 15px;
   border-radius: 10px;
 }
 
-/* 📱 Ajustes responsive */
-@media (min-width: 768px) {
-  .detalle {
-    flex-direction: row;
-    justify-content: center;
-    gap: 40px;
-    text-align: left;
+/* Adaptable a móviles */
+@media (max-width: 768px) {
+  section.bloque {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .info {
-    max-width: 400px;
+  header {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  header img {
+    width: 100px;
+  }
+  .logo-top img {
+  max-width: 100%;
+}
+
+}
+/* Imagen de logo superior */
+.logo-top {
+  width: 100%;
+  text-align: center;
+  background-color: #111; /* opcional, para contraste */
+  padding: 1em 0;
+}
+
+.logo-top img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+}
+/* Carrusel horizontal */
+.media.carrusel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 1em auto;
+  bottom: 150px;;
+}
+
+.carrusel-inner {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  width: 100%;
+}
+
+.carrusel-inner img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 1s ease, transform 1s ease;
+  border-radius: 12px;
+}
+
+/* Imagen activa */
+.carrusel-inner img.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Imagen saliente (se va a la izquierda) */
+.carrusel-inner img.prev {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+/* Adaptación móvil */
+@media (max-width: 768px) {
+  .media.carrusel {
+    max-width: 100%;
   }
 }
+
+
