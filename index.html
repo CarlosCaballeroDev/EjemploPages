@@ -3,33 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo de Perritos</title>
+  <title>Sitio Adaptable</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="logo-top">
+      <img src="logoCronicas.jpg"alt="Logo del sitio">
+    </div>
+  <!-- Encabezado -->
   <header>
-    <h1>🐾 Catálogo de Perritos 🐾</h1>
+    <div class="menu">
+      <select id="menu" onchange="location = this.value;">
+        <option value="#">Ir a...</option>
+        <option value="#seccion1">Acerca de nosotros</option>
+        <option value="#seccion2">Adopciones</option>
+        <option value="#seccion3">Programas de apoyo</option>
+        <option value="#seccion4">Contacto</option>
+      </select>
+    </div>
   </header>
+<!--Sección 1 -->
+<section id="seccion" class="bloque">
+  <div class="texto">
+    <h2>Ella es Sharon⭐</h2>
+    <p>
+      Este carrusel muestra imágenes que se deslizan desde abajo con una animación suave.
+      Se adapta a cualquier tamaño de pantalla.
+    </p>
+  </div>
 
-  <main class="catalogo">
-    <div class="card">
-      <img src="img/firulais.jpg" alt="Firulais">
-      <h2>Firulais</h2>
-      <p>Juguetón y cariñoso. Le encanta correr.</p>
-      <a href="perrito1.html" class="btn">Ver más</a>
+  <div class="media carrusel">
+    <div class="carrusel-inner">
+      <img src="sharon1.jpg" alt="Imagen 1">
+      <img src="morenadog.jpg" alt="Imagen 2">
+      <img src="willydog.jpg" alt="Imagen 3">
+      <img src="Lenna.jpg" alt="Imagen 4">
     </div>
+  </div>
+</section>
 
-    <div class="card">
-      <img src="img/luna.jpg" alt="Luna">
-      <h2>Luna</h2>
-      <p>Dulce y tranquila. Ideal para familia.</p>
-      <a href="perrito2.html" class="btn">Ver más</a>
+
+
+  <!-- Sección 2 -->
+  <section id="seccion1" class="bloque">
+    <div class="texto">
+      <h2>Nuestra labor</h2>
+      <p>
+        Esta es una descripción de ejemplo que acompaña una imagen.
+        Aquí podrías hablar sobre el tema que quieras mostrar.
+      </p>
     </div>
-  </main>
+    <div class="media">
+      <img src="https://via.placeholder.com/400x250" alt="Imagen de ejemplo">
+    </div>
+  </section>
 
-  <footer>
-    <p>© 2025 Catálogo de Perritos</p>
-  </footer>
+  <!-- Sección 3 -->
+  <section id="seccion2" class="bloque">
+    <div class="texto">
+      <h2>Descripción con Video</h2>
+      <p>
+        Aquí se muestra un video relacionado con la descripción de la sección.
+      </p>
+    </div>
+    <div class="media">
+      <video controls width="100%">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Tu navegador no soporta video HTML5.
+      </video>
+    </div>
+  </section>
+
+  <!-- Sección 4 -->
+  <section id="seccion3" class="bloque">
+    <div class="texto">
+      <h2>Otra sección</h2>
+      <p>Esta es otra parte del sitio para probar el desplazamiento.</p>
+    </div>
+    <div class="media">
+      <img src="https://via.placeholder.com/400x250/ffb6c1/000000" alt="Otra imagen">
+    </div>
+  </section>
+<script src="script.js"></script>
 </body>
 </html>
 
